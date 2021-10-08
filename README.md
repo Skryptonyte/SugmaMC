@@ -2,6 +2,16 @@
   <img src="https://avatars2.githubusercontent.com/u/5411890" alt="MultiMC logo"/>
 </p>
 
+
+SugmaMC
+=========
+
+SugmaMC is a fork of MultiMC and is in no way assosciated with the official builds.
+
+In accordance with the Apache License, this fork is named as such. This fork removes the WSL restriction so now you can enjoy the 7 FPS experience on your Windows on Linux Distro of choice.
+
+Since this is an unofficial fork, you will have to generate your own Microsoft Application ID to use in notsecrets/secrets.cpp in order to use your Microsoft Account to play
+
 MultiMC 5
 =========
 

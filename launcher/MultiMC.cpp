@@ -179,10 +179,10 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
         consoleAttached = true;
     }
 #endif
-    setOrganizationName("MultiMC");
+    setOrganizationName("SugmaMC");
     setOrganizationDomain("multimc.org");
-    setApplicationName("MultiMC5");
-    setApplicationDisplayName("MultiMC 5");
+    setApplicationName("SugmaMC5");
+    setApplicationDisplayName("SugmaMC 5");
     setApplicationVersion(BuildConfig.printableVersionString());
 
     startTime = QDateTime::currentDateTime();
@@ -345,7 +345,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
         if (!QFileInfo::exists(FS::PathCombine(originalData, "dontmovemacdata")))
         {
             QMessageBox::StandardButton askMoveDialogue;
-            askMoveDialogue = QMessageBox::question(nullptr, "MultiMC 5", "Would you like to move application data to a new data location? It will improve MultiMC's performance, but if you switch to older versions it will look like instances have disappeared. If you select no, you can migrate later in settings. You should select yes unless you're commonly switching between different versions of MultiMC (eg. develop and stable).", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+            askMoveDialogue = QMessageBox::question(nullptr, "SugmaMC 5", "Would you like to move application data to a new data location? It will improve SugmaMC's performance, but if you switch to older versions it will look like instances have disappeared. If you select no, you can migrate later in settings. You should select yes unless you're commonly switching between different versions of SugmaMC (eg. develop and stable).", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
             if (askMoveDialogue == QMessageBox::Yes)
             {
                 qDebug() << "On macOS and found config file in old location, moving user data...";
@@ -434,7 +434,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
 
     // init the logger
     {
-        static const QString logBase = "MultiMC-%0.log";
+        static const QString logBase = "SugmaMC-%0.log";
         auto moveFile = [](const QString &oldName, const QString &newName)
         {
             QFile::remove(newName);
@@ -451,15 +451,15 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
         if(!logFile->open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
         {
             showFatalErrorMessage(
-                "MultiMC data folder is not writable!",
-                "MultiMC couldn't create a log file - the MultiMC data folder is not writable.\n"
+                "SugmaMC data folder is not writable!",
+                "SugmaMC couldn't create a log file - the MultiMC data folder is not writable.\n"
                 "\n"
     #if defined(Q_OS_MAC)
                 MACOS_HINT
     #endif
                 "Make sure you have write permissions to the MultiMC data folder.\n"
                 "\n"
-                "MultiMC cannot continue until you fix this problem."
+                "SugmaMC cannot continue until you fix this problem."
             );
             return;
         }
@@ -486,7 +486,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
         ENV.setJarsPath( TOSTRING(MULTIMC_JARS_LOCATION) );
 #endif
 
-        qDebug() << "MultiMC 5, (c) 2013-2021 MultiMC Contributors";
+        qDebug() << "SugmaMC 5, (c) 2013-2021 MultiMC Contributors";
         qDebug() << "Version                    : " << BuildConfig.printableVersionString();
         qDebug() << "Git commit                 : " << BuildConfig.GIT_COMMIT;
         qDebug() << "Git refspec                : " << BuildConfig.GIT_REFSPEC;
