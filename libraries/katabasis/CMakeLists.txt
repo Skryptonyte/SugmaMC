@@ -5,9 +5,9 @@ if(IS_IN_SOURCE_BUILD)
     message(FATAL_ERROR "You are building Katabasis in-source. Please separate the build tree from the source tree.")
 endif()
 
-if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    
-endif()
+####################
+## Remove WSL check 
+############
 
 project(Katabasis)
 enable_testing()

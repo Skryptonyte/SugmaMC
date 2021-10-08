@@ -188,9 +188,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
     startTime = QDateTime::currentDateTime();
 
 #ifdef Q_OS_LINUX
-    {
-    
-    }
+    // Remove anti-WSL check at runtime
 #endif
 
     // Don't quit on hiding the last window

@@ -5,14 +5,9 @@ if(IS_IN_SOURCE_BUILD)
     message(FATAL_ERROR "You are building MultiMC in-source. Please separate the build tree from the source tree.")
 endif()
 
-if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    if(CMAKE_HOST_SYSTEM_VERSION MATCHES ".*[Mm]icrosoft.*" OR
-        CMAKE_HOST_SYSTEM_VERSION MATCHES ".*WSL.*"
-    )
-        message(FATAL_ERROR "Building MultiMC is not supported in Linux-on-Windows distributions.")
-    endif()
-endif()
-
+######
+# Remove WSL CMake check that doesn't even work anyway
+######
 if(WIN32)
     # In Qt 5.1+ we have our own main() function, don't autolink to qtmain on Windows
     cmake_policy(SET CMP0020 OLD)
