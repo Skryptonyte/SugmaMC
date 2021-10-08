@@ -6,11 +6,7 @@ if(IS_IN_SOURCE_BUILD)
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
-    if(CMAKE_HOST_SYSTEM_VERSION MATCHES ".*[Mm]icrosoft.*" OR
-        CMAKE_HOST_SYSTEM_VERSION MATCHES ".*WSL.*"
-    )
-        message(FATAL_ERROR "Building Katabasis is not supported in Linux-on-Windows distributions. Use a real Linux machine, not a fraudulent one.")
-    endif()
+    
 endif()
 
 project(Katabasis)

@@ -189,22 +189,7 @@ MultiMC::MultiMC(int &argc, char **argv) : QApplication(argc, argv)
 
 #ifdef Q_OS_LINUX
     {
-        QFile osrelease("/proc/sys/kernel/osrelease");
-        if (osrelease.open(QFile::ReadOnly | QFile::Text)) {
-            QTextStream in(&osrelease);
-            auto contents = in.readAll();
-            if(
-                contents.contains("WSL", Qt::CaseInsensitive) ||
-                contents.contains("Microsoft", Qt::CaseInsensitive)
-            ) {
-                showFatalErrorMessage(
-                    "Unsupported system detected!",
-                    "Linux-on-Windows distributions are not supported.\n\n"
-                    "Please use the Windows MultiMC binary when playing on Windows."
-                );
-                return;
-            }
-        }
+    
     }
 #endif
 
